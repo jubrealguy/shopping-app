@@ -17,7 +17,6 @@ body {
   color: #000000;
 }
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -655,9 +654,18 @@ body {
   background: #FAFAFA;
 }
 
-.footer__heading {
+.footer__heading a {
+  color: inherit;
+  text-decoration: none;
   text-transform: uppercase;
   font-size: 2.4rem;
+}
+
+.footer__heading a span {
+  font-weight: 400;
+}
+
+.footer__heading {
   margin-bottom: 3rem;
 }
 

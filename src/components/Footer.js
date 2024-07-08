@@ -5,7 +5,7 @@ import tiktok from "../img/tiktok.png"
 const Footer = () => {
     return (
         <div className="footing">
-            <h2 className="footer__heading">Romekan</h2>
+            <h2 className="footer__heading"><a href="##">Rome<span>kan</span></a></h2>
             <footer className="footer">
                 <div className="footer__box1">
                     <p className="footer__text">2024 Romekan Furnitures . All Rights Reserved</p>
