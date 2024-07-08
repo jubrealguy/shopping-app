@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/shopping-app/static/css/main.895993df.css",
+    "main.js": "/shopping-app/static/js/main.c726036b.js",
+    "static/media/bg-img.png": "/shopping-app/static/media/bg-img.d40597aa778526c3474c.png",
+    "static/media/chair11.png": "/shopping-app/static/media/chair11.c9f0e8bf0915542aee34.png",
+    "static/media/chair10.png": "/shopping-app/static/media/chair10.838f044983ab7bf7d535.png",
+    "static/media/chair3.png": "/shopping-app/static/media/chair3.f5b3c5217b09a0499f0e.png",
+    "static/media/chair7.png": "/shopping-app/static/media/chair7.88b2a191c5b38683027f.png",
+    "static/media/chair12.png": "/shopping-app/static/media/chair12.9179fb889df132c4ae8c.png",
+    "static/media/chair9.png": "/shopping-app/static/media/chair9.d8ffeaef449c19715576.png",
+    "static/media/chair8.png": "/shopping-app/static/media/chair8.71389ed9ca345aa42e1a.png",
+    "static/media/chair5.png": "/shopping-app/static/media/chair5.ebf42210459de1c3243d.png",
+    "static/media/chair6.png": "/shopping-app/static/media/chair6.93b4a5e2a5c52d1cb4ef.png",
+    "static/media/chair4.png": "/shopping-app/static/media/chair4.741719829023ab37450a.png",
+    "static/media/chair2.png": "/shopping-app/static/media/chair2.7172e188568574e719bd.png",
+    "static/media/chair1.png": "/shopping-app/static/media/chair1.0470258774c1d11da6e0.png",
+    "index.html": "/shopping-app/index.html",
+    "main.895993df.css.map": "/shopping-app/static/css/main.895993df.css.map",
+    "main.c726036b.js.map": "/shopping-app/static/js/main.c726036b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.895993df.css",
+    "static/js/main.c726036b.js"
+  ]
+}
