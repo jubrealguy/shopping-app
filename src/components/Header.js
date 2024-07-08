@@ -19,7 +19,6 @@ const Header = () => {
                     <Link to="/cart"><img src={cart} alt="" className="header__icons--cart" /></Link>
                 </div>
             </header>
-            <h3 className="header__text">Welcome to our furniture collection, where style meets comfort and quality</h3>
         </>
     )
 }
