@@ -1,5 +1,6 @@
 import bookmark from "../img/bookmark.png"
 import cart from "../img/cart.png"
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -14,9 +15,9 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className="header__icons">
-                    <a href="##"><img src={bookmark} alt="" className="header__icons-bookmark" /></a>
-                    <a href="##"><img src={cart} alt="" className="header__icons--cart" /></a>
-                </div>`
+                    <Link to="/"><img src={bookmark} alt="" className="header__icons-bookmark" /></Link>
+                    <Link to="/cart"><img src={cart} alt="" className="header__icons--cart" /></Link>
+                </div>
             </header>
             <h3 className="header__text">Welcome to our furniture collection, where style meets comfort and quality</h3>
         </>

@@ -2,6 +2,7 @@ import chair3 from "../img/chair3.png"
 import chair8 from "../img/chair8.png"
 import updown from "../img/updown.png"
 import cancel from "../img/cancel.png"
+import { Link } from "react-router-dom";
 
 const Cart = () => {
     return (
@@ -28,7 +29,7 @@ const Cart = () => {
                 </ul>
             </div>
             <div>
-                <a href="##" className="cart__link">Return to store</a>
+                <Link to="/" href="##" className="cart__link">Return to store</Link>
             </div>
             <div className="cart__checkout">
                 <form className="cart__form">
@@ -51,7 +52,7 @@ const Cart = () => {
                             <span>$950</span>
                         </div>
                     </div>
-                    <a href="##">Proceed to checkout</a>
+                    <Link to="/checkout">Proceed to checkout</Link>
                 </div>
             </div>
         </div>

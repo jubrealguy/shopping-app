@@ -346,6 +346,248 @@ body {
   text-align: center;
 }
 
+.checkout {
+  padding: 4rem 7.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkout__heading {
+  font-size: 1.6rem;
+  margin-bottom: 4rem;
+}
+
+.checkout__heading-span {
+  color: rgb(0, 0, 0, .5);
+}
+
+.checkout__form {
+  flex: 0 0 55%;
+  padding: 4rem 0;
+}
+
+.checkout__summary {
+  flex: 0 0 35%;
+  padding: 4rem;
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+.form__customer {
+  margin-bottom: 6rem;
+}
+
+.form__label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.form__label span:first-child {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.form__label span:last-child {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #016FD0;
+}
+
+.form__input {
+  width: 100%;
+  padding: .85rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form__billing {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__input-name input {
+  flex: 0 0 47%;
+}
+
+.form__delivery {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.form__delivery-home {
+  margin-right: 5rem;
+  padding: 1rem 7rem 1rem 2rem;
+  border: 1px solid #7047EB;
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+.form__delivery-store {
+  padding: 1rem 7rem 1rem 2rem;
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+.form__delivery-home span:first-child, .form__delivery-store span:first-child {
+  display: block;
+  color: #25252D;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: .75rem;
+}
+.form__delivery-home span:last-child, .form__delivery-store span:last-child {
+  display: block;
+  color: #828282;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.checkout__summary h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.summary__items {
+  margin-bottom: 7rem;
+}
+
+.summary__body {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.summary__body li {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+
+.summary__body-product img {
+  width: 4rem;
+  height: 4.8rem;
+  margin-right: 2rem;
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.summary__body-product p {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary__body-product p span {
+  margin-bottom: 1rem;
+}
+
+.summary__details {
+  margin-bottom: 6rem;
+}
+
+.summary__details h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+
+.summary__table-top, .summary__table-middle, .summary__table-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+
+.summary__table-top, .summary__table-middle {
+  border-bottom: 1px solid rgb(0, 0, 0, .5);
+}
+
+.summary__payment {
+  padding-right: 12rem;
+}
+
+.summary__payment h3 {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.summary__form {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.summary__form input {
+  width: 1rem;
+  margin-right: 2rem;
+}
+
+.summary__form label span {
+  display: block;
+}
+
+.summary__form label span:first-child {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: -.4rem;
+}
+
+.summary__form label span:last-child {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #828282;
+}
+
+.summary__form label span {
+  display: block;
+}
+
+.summary__review {
+  margin-bottom: 3rem;
+}
+
+.summary__review p:first-child {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: .6rem;
+}
+
+.summary__review p:last-child {
+  font-size: 1.4rem;
+  color: #645A5C;
+}
+
+.summary__form label {
+  font-size: 1.6rem;
+}
+
+.summary__form a {
+  text-decoration: none;
+  color: #024E82;
+}
+
+.summary__payment button {
+  padding: 1rem 3rem;
+  background: #024E82;
+  color: #ffffff;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: .5rem;
+  margin-top: 10rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
