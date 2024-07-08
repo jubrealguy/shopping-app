@@ -52,7 +52,7 @@ const Cart = () => {
                             <span>$950</span>
                         </div>
                     </div>
-                    <Link to="/checkout">Proceed to checkout</Link>
+                    <Link to="/cart/checkout">Proceed to checkout</Link>
                 </div>
             </div>
         </div>
