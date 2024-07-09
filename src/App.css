@@ -67,6 +67,7 @@ body {
 }
 
 .header__icons--bookmark {
+  display: block;
   width: 3rem;
 }
 
@@ -74,6 +75,49 @@ body {
   display: block;
   width: 3.5rem;
   margin-bottom: 1.3rem;
+}
+
+.header__icons--hamburger {
+  display: none;
+  width: 3.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .header__icons--hamburger {
+    display: block;
+    margin-left: 3rem;
+  }
+
+  .header__icons--bookmark {
+    display: none;
+  }
+
+  .header__list {
+    display: none;
+  }
+}
+
+.header__list-mobile {
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 7.5rem 3rem;
+  height: 100vh;
+  border-radius: 1rem;
+  background: rgba(128, 128, 128, 0.95);
+  z-index: 1;
+}
+
+.header__list-mobile > * {
+  margin-bottom: 4rem;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.header__list--link-mobile {
+  text-decoration: none;
+  color: white;
 }
 
 .header__text {
