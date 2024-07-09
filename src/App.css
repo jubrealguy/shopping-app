@@ -127,10 +127,12 @@ a {
 }
 
 .header__list-mobile img {
-  width: 3.5rem;
+  width: 2.5rem;
   position: absolute;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 3.8rem;
+  padding: .1rem;
+  right: -10.75rem;
+  background: white;
 }
 
 .header__list--link-mobile {
@@ -368,7 +370,7 @@ a {
   margin-right: 1.5rem;
 }
 
-.section__pages-1 {
+.section__pages .section__pages-1 {
   color: #ffffff;
   background: #024E82;
 }

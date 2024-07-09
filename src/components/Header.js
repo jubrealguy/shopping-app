@@ -7,15 +7,17 @@ import x from "../img/x.png"
 
 const Header = () => {
     const [clickedNav, setclickedNav] = useState(false);
+    const [imageSrc, setImageSrc] = useState(ham);
 
     const clickHam = (e) => {
         e.preventDefault();
         setclickedNav(!clickedNav);
+        setImageSrc(clickedNav ? ham : x);
     }
 
     const nav = (
         <ul className="header__list-mobile">
-            <img src={x} alt="" onClick={clickHam} />
+            
             <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile">Home</Link></li>
             <li className="header__list--item-mobile" onClick={clickHam}><Link className="header__list--link-mobile">Shop All</Link></li>
             <li className="header__list--item-mobile" onClick={clickHam}><Link to="/cart" className="header__list--link-mobile">My Order</Link></li>
@@ -36,7 +38,7 @@ const Header = () => {
                 <div className="header__icons">
                     <Link to="/"><img src={bookmark} alt="" className="header__icons--bookmark" /></Link>
                     <Link to="/cart"><img src={cart} alt="" className="header__icons--cart" /></Link>
-                    <Link to="/"><img src={ham} alt="" className="header__icons--hamburger" onClick={clickHam} /></Link>
+                    <Link to="/"><img src={imageSrc} alt="" className="header__icons--hamburger" onClick={clickHam} /></Link>
                 </div>
                 {clickedNav && nav}
             </header>
