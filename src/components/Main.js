@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, React } from "react";
 import down from "../img/chevron-down.png"
 import Chairs from "./Chairs";
+// import Bed from "./Bed";
+// import { Route, Routes, Link } from 'react-router-dom';
 
 const Main = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -58,6 +60,10 @@ const Main = () => {
                     </div>
                 </div>
                 <Chairs />
+                {/* <Routes>
+                    <Route exact path="/chairs" component={<Chairs />} />
+                    <Route exact path="/bed" component={<Bed />} />
+                </Routes> */}
                 <ul className="section__pages">
                     <li className="section__pages-1">1</li>
                     <li>2</li>

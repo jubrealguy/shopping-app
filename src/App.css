@@ -909,11 +909,14 @@ a {
   display: block;
 }
 
+.summary__form label {
+  margin-top: -.8rem;
+}
+
 .summary__form label span:first-child {
   font-size: 1.6rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  margin-top: -.4rem;
 }
 
 .summary__form label span:last-child {
@@ -950,8 +953,8 @@ a {
   color: #024E82;
 }
 
-.summary__payment button {
-  padding: 1rem 3rem;
+.checkout__summary button {
+  padding: 1rem 4rem;
   background: #024E82;
   color: #ffffff;
   font-size: 1.6rem;
@@ -1013,8 +1016,10 @@ a {
     font-size: 1.2rem;
   }
 
-  .summary__payment button {
+  .checkout__summary button {
     margin-top: 6rem;
+    padding: .75rem 3rem;
+    width: 70%;
   }
 }
 

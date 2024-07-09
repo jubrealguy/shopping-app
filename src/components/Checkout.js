@@ -85,8 +85,8 @@ const Checkout = () => {
                         <input type="checkbox" />
                         <label>I agree to the <a href="##">Terms & conditions, Privacy policy & Return policy</a></label>
                     </div>
-                    <button>Complete order</button>
                 </div>
+                <button>Complete order</button>
             </div>
         </div>
     )
