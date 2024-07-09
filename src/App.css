@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -905,6 +907,19 @@ body {
   margin-left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 768px) {
+  .summary__details h2 {
+    display: none;
+  }
+
+  .summary__table-top, .summary__table-middle, .summary__table-bottom {
+    font-size: 1.4rem;
+  }
+}
+
+
+
 .footing {
   padding: 6rem 7.5rem;
   background: #FAFAFA;
