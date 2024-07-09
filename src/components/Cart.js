@@ -1,6 +1,5 @@
 import chair3 from "../img/chair3.png"
 import chair8 from "../img/chair8.png"
-import updown from "../img/updown.png"
 import cancel from "../img/cancel.png"
 import { Link } from "react-router-dom";
 
@@ -14,8 +13,7 @@ const Cart = () => {
             </ul>
             <ul className="cart__product">
                 <li><h3>Quantity</h3></li>
-                <li><span>01</span><img src={updown} alt="" /></li>
-                
+                <li><table><tr><td>-</td><td>2</td><td>+</td></tr></table></li>
             </ul>
             <ul className="cart__product">
                 <li><h3>Price</h3></li>
@@ -41,13 +39,13 @@ const Cart = () => {
                 <ul className="cart__body">
                     <li className="cart__body-product"><img src={chair3} alt="" /><span>Red Chair</span></li>
                     <li>$50</li>
-                    <li><span>01</span><img src={updown} alt="" /></li>
+                    <li><table><tr><td>-</td><td>1</td><td>+</td></tr></table></li>
                     <li><span>$50</span><img src={cancel} alt="" /></li>
                 </ul>
                 <ul className="cart__body">
                     <li className="cart__body-product"><img src={chair8} alt="" /><span>Kinsgold Chair</span></li>
                     <li>$40</li>
-                    <li><span>02</span><img src={updown} alt="" /></li>
+                    <li><table><tr><td>-</td><td>2</td><td>+</td></tr></table></li>
                     <li><span>$40</span><img src={cancel} alt="" /></li>
                 </ul>
             </div>
