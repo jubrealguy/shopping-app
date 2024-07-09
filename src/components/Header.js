@@ -16,9 +16,9 @@ const Header = () => {
     const nav = (
         <ul className="header__list-mobile">
             <img src={x} alt="" onClick={clickHam} />
-            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile" href="##">Home</Link></li>
-            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Shop All</a></li>
-            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Order</a></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile">Home</Link></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><Link className="header__list--link-mobile">Shop All</Link></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/cart" className="header__list--link-mobile">My Order</Link></li>
         </ul>
     )
        
@@ -28,9 +28,9 @@ const Header = () => {
                 <h1 className="header__primary"><Link to='/'>Rome<span>kan</span></Link></h1>
                 <nav className="header__nav">
                     <ul className="header__list">
-                        <li className="header__list--item"><a className="header__list--link" href="##">Home</a></li>
-                        <li className="header__list--item"><a className="header__list--link" href="##">Shop off</a></li>
-                        <li className="header__list--item"><a className="header__list--link" href="##">Order</a></li>
+                        <li className="header__list--item"><Link to="/" className="header__list--link">Home</Link></li>
+                        <li className="header__list--item"><Link className="header__list--link">Shop off</Link></li>
+                        <li className="header__list--item"><Link to="/cart" className="header__list--link">My Order</Link></li>
                     </ul>
                 </nav>
                 <div className="header__icons">
