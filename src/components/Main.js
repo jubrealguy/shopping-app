@@ -1,7 +1,20 @@
 import chairs from "../data/data"
 import add_cart from "../img/add_cart.png"
+import { useState } from "react";
 
 const Main = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [activeItem, setActiveItem] = useState('Chairs');
+
+        const toggleDropdown = () => {
+            setIsOpen(!isOpen);
+        }
+
+        const handleItemClick = (item) => {
+            setActiveItem(item);
+            setIsOpen(false);
+          };
+
     return (
         <div>
             <h3 className="header__text">Welcome to our furniture collection, where style meets comfort and quality</h3>
@@ -13,8 +26,21 @@ const Main = () => {
                         <li>Dining set</li>
                         <li>TV console</li>
                     </ul>
+
+                    <ul className="section__nav--list-mobile">
+                        <li className="section__nav--list-first" onClick={toggleDropdown}>
+                        {activeItem} &nbsp; &#x25BC;
+                        </li>
+                        {isOpen && (
+                        <>
+                            <li onClick={() => handleItemClick('Bed')}>Bed</li>
+                            <li onClick={() => handleItemClick('Dining set')}>Dining set</li>
+                            <li onClick={() => handleItemClick('TV console')}>TV console</li>
+                        </>
+                        )}
+                    </ul>
                     <div>
-                        <a href="##" className="section__link">Filter</a>
+                        <a href="##" className="section__link">Sort by</a>
                     </div>
                 </div>
                 <div className="section__chairs">

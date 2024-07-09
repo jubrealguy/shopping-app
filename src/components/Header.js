@@ -3,20 +3,22 @@ import cart from "../img/cart.png"
 import { Link } from "react-router-dom";
 import ham from "../img/menu.png"
 import { useState } from "react";
+import x from "../img/x.png"
 
 const Header = () => {
     const [clickedNav, setclickedNav] = useState(false);
-    
+
     const clickHam = (e) => {
         e.preventDefault();
         setclickedNav(!clickedNav);
     }
 
     const nav = (
-        <ul className="header__list-mobile" onClick={clickHam}>
-                <li className="header__list--item-mobile"><a className="header__list--link-mobile" href="##">Home</a></li>
-                <li className="header__list--item-mobile"><a className="header__list--link-mobile" href="##">Shop off</a></li>
-            <li className="header__list--item-mobile"><a className="header__list--link-mobile" href="##">Contact us</a></li>
+        <ul className="header__list-mobile">
+            <img src={x} alt="" onClick={clickHam} />
+            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile" href="##">Home</Link></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Shop off</a></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Contact us</a></li>
         </ul>
     )
        
