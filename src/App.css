@@ -144,7 +144,7 @@ a {
 .header__text {
   background: url(./img/bg-img.png);
   background-position: center;
-  background-size: 115%;
+  background-size: cover;
   display: flex;
   align-items: center;
   text-align: center;
@@ -154,10 +154,9 @@ a {
   color: #ffffff;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .header__text {
-    background-size: 150%;
-    padding: 12rem 15%;
+    padding: 9rem 15%;
     font-size: 2.3rem;
     line-height: 1.5;
   }
@@ -165,7 +164,13 @@ a {
 
 @media screen and (max-width: 768px) {
   .header__text {
-    background-size: 200%;
+    padding: 7rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header__text {
     padding: 5rem 3rem;
     font-size: 1.6rem;
   }
