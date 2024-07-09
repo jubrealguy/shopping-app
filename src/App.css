@@ -909,12 +909,32 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .summary__details {
+    margin-bottom: 3.5rem;
+  }
+
   .summary__details h2 {
     display: none;
   }
 
   .summary__table-top, .summary__table-middle, .summary__table-bottom {
     font-size: 1.4rem;
+  }
+
+  .summary__payment {
+    padding-right: 1rem
+  }
+
+  .summary__payment h3 {
+    font-size: 1.6rem;
+  }
+
+  .summary__form label span:first-child {
+    font-size: 1.4rem;
+  }
+
+  .summary__form label span:last-child {
+    font-size: 1.2rem;
   }
 }
 
