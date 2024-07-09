@@ -4,7 +4,6 @@ import cancel from "../img/cancel.png"
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-
     const cartMobile = (
         <div className="cart__table-mobile">
             <ul className="cart__product">
