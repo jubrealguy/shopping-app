@@ -17,8 +17,8 @@ const Header = () => {
         <ul className="header__list-mobile">
             <img src={x} alt="" onClick={clickHam} />
             <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile" href="##">Home</Link></li>
-            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Shop off</a></li>
-            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Contact us</a></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Shop All</a></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><a className="header__list--link-mobile" href="##">Order</a></li>
         </ul>
     )
        
@@ -30,7 +30,7 @@ const Header = () => {
                     <ul className="header__list">
                         <li className="header__list--item"><a className="header__list--link" href="##">Home</a></li>
                         <li className="header__list--item"><a className="header__list--link" href="##">Shop off</a></li>
-                        <li className="header__list--item"><a className="header__list--link" href="##">Contact us</a></li>
+                        <li className="header__list--item"><a className="header__list--link" href="##">Order</a></li>
                     </ul>
                 </nav>
                 <div className="header__icons">

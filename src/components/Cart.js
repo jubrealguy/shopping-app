@@ -5,6 +5,29 @@ import cancel from "../img/cancel.png"
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+
+    const cartMobile = (
+        <div className="cart__table-mobile">
+            <ul className="cart__product">
+                <li><h3>Product</h3></li>
+                <li className="cart__body-product"><img src={chair3} alt="" /><span>Red Chair</span></li>
+            </ul>
+            <ul className="cart__product">
+                <li><h3>Quantity</h3></li>
+                <li><span>01</span><img src={updown} alt="" /></li>
+                
+            </ul>
+            <ul className="cart__product">
+                <li><h3>Price</h3></li>
+                <li>$50</li>
+            </ul>
+            <ul className="cart__product">
+                <li><h3>Subtotal</h3></li>
+                <li>$50</li>
+            </ul>
+        </div>
+    )
+
     return (
         <div className="section__cart">
             <h3 className="cart__heading"><span className="cart__heading-span">Home / </span>Cart</h3>
@@ -28,7 +51,8 @@ const Cart = () => {
                     <li><span>$40</span><img src={cancel} alt="" /></li>
                 </ul>
             </div>
-            <div>
+            {cartMobile}
+            <div className="cart__link-mobile">
                 <Link to="/" href="##" className="cart__link">Return to store</Link>
             </div>
             <div className="cart__checkout">

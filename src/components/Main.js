@@ -1,6 +1,7 @@
 import chairs from "../data/data"
 import add_cart from "../img/add_cart.png"
 import { useState } from "react";
+import down from "../img/chevron-down.png"
 
 const Main = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +30,11 @@ const Main = () => {
 
                     <ul className="section__nav--list-mobile">
                         <li className="section__nav--list-first" onClick={toggleDropdown}>
-                        {activeItem} &nbsp; &#x25BC;
+                        <span>{activeItem}</span><img src={down} alt="" />
                         </li>
                         {isOpen && (
                         <>
+                            <li onClick={() => handleItemClick('Bed')}>Chairs</li>
                             <li onClick={() => handleItemClick('Bed')}>Bed</li>
                             <li onClick={() => handleItemClick('Dining set')}>Dining set</li>
                             <li onClick={() => handleItemClick('TV console')}>TV console</li>
@@ -54,7 +56,7 @@ const Main = () => {
                                         <span className="card-price-1">${chair.price1}</span>
                                         <span className="card-price-2">${chair.price2}</span>
                                     </p>
-                                    <img src={add_cart} alt="" className="card-cartimg"/>
+                                    <img src={add_cart} alt="" className="card-carting"/>
                                 </div>
                             </div>
                         )
