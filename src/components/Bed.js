@@ -1,6 +1,6 @@
 const Bed = () => {
     return (
-        <h1>BED</h1>
+        <h1>BEDbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</h1>
     )
 }
 
