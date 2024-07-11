@@ -24,7 +24,7 @@ const Header = () => {
         <ul className="header__list-mobile">
             <li className="header__list--item-mobile" onClick={clickHam}><Link to="/" className="header__list--link-mobile">Home</Link></li>
             <li className="header__list--item-mobile" onClick={clickHam}><Link className="header__list--link-mobile">Shop All</Link></li>
-            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/cart" className="header__list--link-mobile">My Order</Link></li>
+            <li className="header__list--item-mobile" onClick={clickHam}><Link to="/cart" className="header__list--link-mobile">Contact us</Link></li>
         </ul>
     )
        
@@ -36,7 +36,7 @@ const Header = () => {
                     <ul className="header__list">
                         <li className='header__list--item'><Link to="/" className={activeIndex === 0 ? 'header__list--link active' : 'header__list--link'} onClick={() => handleIndexClick(0)}>Home</Link></li>
                         <li className='header__list--item'><Link className={activeIndex === 1 ? 'header__list--link active' : 'header__list--link'} onClick={() => handleIndexClick(1)}>Shop off</Link></li>
-                        <li className='header__list--item'><Link to="/cart" className={activeIndex === 2 ? 'header__list--link active' : 'header__list--link'} onClick={() => handleIndexClick(2)}>My Order</Link></li>
+                        <li className='header__list--item'><Link to="/cart" className={activeIndex === 2 ? 'header__list--link active' : 'header__list--link'} onClick={() => handleIndexClick(2)}>Contact us</Link></li>
                     </ul>
                 </nav>
                 <div className="header__icons">
