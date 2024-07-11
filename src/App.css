@@ -65,7 +65,10 @@ a {
   text-decoration: none;
   color: #2F2F2F;
   font-size: 1.4rem;
+}
 
+.header__list a.active {
+  color: #024E82 !important;
 }
 
 .header__icons {
