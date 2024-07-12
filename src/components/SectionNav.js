@@ -1,5 +1,6 @@
 import { useState, React } from "react";
 import down from "../img/chevron-down.png"
+import { Link } from "react-router-dom";
 
 const SectionNav = () => {
 
@@ -25,16 +26,16 @@ const SectionNav = () => {
         <div className="section__nav">
             <ul className="section__nav--list">
                 <li className={activeIndex === 0 ? 'section__nav--list-first active' : 'section__nav--list-first'} onClick={() => handleIndexClick(0)} >
-                    Chairs
+                    <Link to="">Chairs</Link>
                 </li>
                 <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleIndexClick(1)} >
-                    Bed
+                    <Link to="bed">Bed</Link>
                 </li>
                 <li className={activeIndex === 2 ? 'active' : ''} onClick={() => handleIndexClick(2)} >
-                    Dining set
+                    <Link>Dining set</Link>
                 </li>
                 <li className={activeIndex === 3 ? 'active' : ''} onClick={() => handleIndexClick(3)} >
-                    TV console
+                    <Link>TV console</Link>
                 </li>
             </ul>
 
@@ -44,10 +45,10 @@ const SectionNav = () => {
                 </li>
                 {isOpen && (
                 <>
-                    <li onClick={() => handleItemClick('Chairs')}>Chairs</li>
-                    <li onClick={() => handleItemClick('Bed')}>Bed</li>
-                    <li onClick={() => handleItemClick('Dining set')}>Dining set</li>
-                    <li onClick={() => handleItemClick('TV console')}>TV console</li>
+                    <li onClick={() => handleItemClick('Chairs')}><Link to="">Chairs</Link></li>
+                    <li onClick={() => handleItemClick('Bed')}><Link to="bed">Bed</Link></li>
+                    <li onClick={() => handleItemClick('Dining set')}><Link>Dining set</Link></li>
+                    <li onClick={() => handleItemClick('TV console')}><Link>TV console</Link></li>
                 </>
                 )}
             </ul>

@@ -1,8 +1,10 @@
-import chairs from "../data/data"
+import React from 'react';
+import {chairs} from "../data/data"
 import add_cart from "../img/add_cart.png"
 
 const Chairs = () => {
     return (
+    <React.Fragment>
         <div className="section__chairs">
             {chairs.map((chair, index) => {
                 return (
@@ -20,6 +22,7 @@ const Chairs = () => {
                 )
             })}
         </div>
+    </React.Fragment>
     )
 }
 

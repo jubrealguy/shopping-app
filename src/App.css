@@ -213,13 +213,17 @@ a {
 }
 
 .section__nav--list li {
+  margin-right: 5rem;
+}
+
+.section__nav--list li a {
+  text-decoration: none;
   font-size: 1.4rem;
   color: #6A6A6A;
-  margin-right: 5rem;
   cursor: pointer;
 }
 
-.section__nav--list li.active {
+.section__nav--list li.active a {
   color: #024E82;
   font-size: 2rem;
 }
@@ -265,8 +269,13 @@ a {
 
   .section__nav--list-mobile li {
     padding: 10px;
-    font-size: 1.4rem;
     border-bottom: 1px solid #DDD;
+  }
+
+  .section__nav--list-mobile li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #6A6A6A;
   }
 
   .section__nav--list-first {
