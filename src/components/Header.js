@@ -1,14 +1,16 @@
-import bookmark from "../img/bookmark.png"
 import cart from "../img/cart.png"
 import { Link } from "react-router-dom";
 import ham from "../img/menu.png"
-import { useState } from "react";
+import { useState, useContext } from "react";
 import x from "../img/x.png"
+import NumContext from './NumContext';
 
 const Header = () => {
+    const { num } = useContext(NumContext);
     const [clickedNav, setclickedNav] = useState(false);
     const [imageSrc, setImageSrc] = useState(ham);
     const [activeIndex, setActiveIndex] = useState(0);
+    
 
     const clickHam = (e) => {
         e.preventDefault();
@@ -40,8 +42,10 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className="header__icons">
-                    <Link to="/"><img src={bookmark} alt="" className="header__icons--bookmark" /></Link>
-                    <Link to="/cart"><img src={cart} alt="" className="header__icons--cart" /></Link>
+                    <Link to="/cart" className="header__icons--cart">
+                        <img src={cart} alt="" />
+                        <span>{num}</span>
+                    </Link>
                     <Link to="/"><img src={imageSrc} alt="" className="header__icons--hamburger" onClick={clickHam} /></Link>
                 </div>
                 {clickedNav && nav}

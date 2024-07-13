@@ -1,7 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import add_cart from "../img/add_cart.png"
+import NumContext from './NumContext';
+
 
 const Chairs = () => {
+  const { num, setNum } = useContext(NumContext);
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -33,17 +37,17 @@ const Chairs = () => {
             {data.map((chair) => {
                 const imageUrl = chair.photos && chair.photos.length > 0 ? `https://api.timbu.cloud/images/${chair.photos[0].url}` : null;
                 return (
-                    <div key={chair.unique_id} className="card">
+                    <Link to="/product" key={chair.unique_id} className="card">
                         <img src={imageUrl} alt="" className="card-img" />
                         <p className="card-title">{chair.name}</p>
                         <div className="card-price">
                             <p>
-                                <span className="card-price-1">${chair.current_price[0].USD[0]}</span>
-                                <span className="card-price-2">${chair.price2}</span>
+                                <span className="card-price-1">${chair.current_price[0].USD[1]}</span>
+                                <span className="card-price-2">${chair.current_price[0].USD[0]}</span>
                             </p>
-                            <img src={add_cart} alt="" className="card-carting"/>
+                            <img src={add_cart} alt="" className="card-carting" onClick={() => setNum(num + 1)} />
                         </div>
-                    </div>
+                    </Link>
                 )
             })}
         </div>

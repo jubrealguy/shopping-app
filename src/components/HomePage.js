@@ -1,8 +1,8 @@
 import { React } from "react";
-import Chairs from "../components/Chairs";
-import SectionNav from "../components/SectionNav"
+import Chairs from "./Chairs";
+import SectionNav from "./SectionNav"
 import { Route, Routes } from 'react-router-dom';
-import Bed from "../components/Bed"
+import Bed from "./Bed"
 
 const HomePage = () => {
     return (

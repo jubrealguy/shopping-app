@@ -82,15 +82,28 @@ a {
   margin-right: 1rem;
 }
 
-.header__icons--bookmark {
-  display: block;
-  width: 3rem;
+.header__icons--cart {
+  position: relative;
+  text-decoration: none;
 }
 
-.header__icons--cart {
-  display: block;
-  width: 3.5rem;
-  margin-bottom: 1.3rem;
+.header__icons--cart img {
+  position: absolute;
+  width: 2.4rem;
+}
+
+.header__icons--cart span {
+  position: absolute;
+  left: 1.8rem;
+  top: -.5rem;
+  font: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  background: #024E82;
+  border-radius: 50%;
+  color: #ffffff;
+  padding: .15rem .5rem;
+  text-align: center;
 }
 
 .header__icons--hamburger {
@@ -309,6 +322,11 @@ a {
   }
 }
 
+.card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card-img {
   display: inline-block;
   width: 100%;
@@ -470,6 +488,11 @@ a {
   display: flex;
   align-items: center;
   padding: .4rem .75rem;
+  margin-left: -5rem;
+}
+
+.cart__body li:nth-child(2) {
+  margin-left: -5rem;
 }
 
 .cart__body li:nth-child(3) table {
@@ -558,6 +581,10 @@ a {
 
 .cart__product li:last-child span {
   font-size: 1.8rem;
+}
+
+.table-data {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {
