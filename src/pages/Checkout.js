@@ -1,7 +1,16 @@
 import chair3 from "../img/chair3.png"
 import chair8 from "../img/chair8.png"
+import check_confirm from "../img/check_confirm.png"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Checkout = () => {
+    const [congratmsg, setCongratmsg] = useState(false)
+
+    const clickConfirm =(e) => {
+        e.preventDefault()
+        setCongratmsg(true)
+    }
     return (
         <div className="checkout">
             <form className="checkout__form">
@@ -79,15 +88,27 @@ const Checkout = () => {
                     </div>
                     <div className="summary__review">
                         <p>Review and place order</p>
-                        <p>Please review the order details and payment details before proceeding to confirm your order </p>
+                        <p>Please review the order details and payment details before congratmsging to confirm your order </p>
                     </div>
                     <div className="summary__form">
                         <input type="checkbox" />
                         <label>I agree to the <a href="##">Terms & conditions, Privacy policy & Return policy</a></label>
                     </div>
                 </div>
-                <button>Complete order</button>
+                <button onClick={clickConfirm}>Complete order</button>
             </div>
+            {
+                congratmsg && <div className="checkoutConfirmation-box">
+                <div className="checkoutConfirmation">
+                    <p className="checkoutConfirmation__title">Congratulations on your order</p>
+                    <p className="checkoutConfirmation__body">The product you ordered will be delivered in your address within 5days</p>
+                    <div className="checkoutConfirmation__img-box">
+                        <img className="checkoutConfirmation__img" src={check_confirm} alt="" />
+                    </div>
+                    <Link to="/">Return to store</Link>
+                </div>
+            </div>
+            }
         </div>
     )
 }

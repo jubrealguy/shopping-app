@@ -1,9 +1,24 @@
 import chair3 from "../img/chair3.png"
 import chair8 from "../img/chair8.png"
 import cancel from "../img/cancel.png"
+import check_cancel from "../img/check_cancel.png"
+import check_confirm from "../img/check_confirm.png"
 import { Link } from "react-router-dom";
+import { useState } from "react"
 
 const Cart = () => {
+    const [proceed, setProceed] = useState(false)
+
+    const clickConfirm =(e) => {
+        e.preventDefault()
+        setProceed(true)
+    }
+
+    const clickcancel =(e) => {
+        e.preventDefault()
+        setProceed(false)
+    }
+
     const cartMobile = (
         <div className="cart__table-mobile">
             <ul className="cart__product">
@@ -73,9 +88,20 @@ const Cart = () => {
                             <span>$950</span>
                         </div>
                     </div>
-                    <Link to="/cart/checkout">Proceed to checkout</Link>
+                    <Link onClick={clickConfirm}>Proceed to checkout</Link>
                 </div>
             </div>
+
+            { proceed && 
+            <div className="cartConfirmation-box">
+                <div className="cartConfirmation">
+                    <p>Are you sure you want to complete the order</p>
+                    <div className="link-div">
+                        <Link to="/cart/checkout"><img src={check_confirm} alt="" /></Link>
+                        <Link onClick={clickcancel}><img src={check_cancel} alt="" /></Link>
+                    </div>
+                </div>
+            </div>}
         </div>
     )
 }

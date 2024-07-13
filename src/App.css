@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 
 *, *::after, *::before {
   margin: 0;
@@ -17,7 +19,7 @@ html {
 body {
   font-family: 'Poppins', sans-serif;
   color: #000000;
-  background-color: rgba(128, 128, 128, 0.031);
+  background-color: rgba(128, 128, 128, 0.035);
 }
 
 a {
@@ -379,7 +381,13 @@ a {
 
 .card-carting {
   margin-left: auto;
-  width: 2rem;
+  width: 2.4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .card-carting {
+    width: 1.2rem;
+  }
 }
 
 .section__pages {
@@ -695,6 +703,229 @@ a {
 
   .cart__summary h2 {
     display: none;
+  }
+}
+
+.cartConfirmation-box, .checkoutConfirmation-box {
+  background-color: #0000004D;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartConfirmation, .checkoutConfirmation {
+  background-color: white;
+  max-width: 90rem;
+  text-align: center;
+  position: fixed;
+  border: 1px solid #024E82;
+  border-radius: 2.2rem;
+  padding: 10rem 0;
+}
+
+.cartConfirmation p {
+  font-family: 'Inter', sans-serif;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 12rem;
+  padding: 0 15rem;
+}
+
+.cartConfirmation a {
+  display: inline-block;
+  padding: 1.5rem 12rem;
+  border-radius: 1.2rem;
+}
+
+.cartConfirmation a:first-child {
+  border: 1px solid #4E976C;
+  margin-right: 5rem;
+}
+
+.cartConfirmation a:last-child {
+  border: 1px solid #F8290F;
+}
+
+.cartConfirmation a img {
+  width: 3.556rem;
+  height: 3.49rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .cartConfirmation p {
+    font-size: 2.5rem;
+    padding: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .cartConfirmation a {
+    padding: 1.5rem 6rem;
+    border-radius: 1.2rem;
+  }
+
+  .cartConfirmation a:first-child {
+    border: 1px solid #4E976C;
+    margin-right: 2rem;
+  }
+
+  .cartConfirmation a img {
+    width: 2.5rem;
+    height: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cartConfirmation p {
+    font-size: 16px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .cartConfirmation a {
+    padding: 1.2rem 5rem;
+    border-radius: 1.2rem;
+  }
+
+  .cartConfirmation a:first-child {
+    border: 1px solid #4E976C;
+    margin-right: 2rem;
+  }
+
+  .cartConfirmation a img {
+    width: 2.5rem;
+    height: 2.3rem;
+  }
+}
+
+.checkoutConfirmation__title {
+  font-family: 'Poppins';
+  font-size: 4.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.checkoutConfirmation__body {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 23rem;
+  margin-bottom: 4rem;
+}
+
+.checkoutConfirmation__img-box {
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid #4E976C;;
+  border-radius: 50%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 7rem;
+}
+
+.checkoutConfirmation__img {
+  display: inline-block;
+  width: 35.56px;
+  height: 34.9px;
+  margin-left: 50%;
+  margin-top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkoutConfirmation a {
+  text-decoration: none;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: #024E82;
+  width: 23.3rem;
+  height: 5.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border: none;
+  border-radius: .4rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .cartConfirmation, .checkoutConfirmation {
+    width: 80%;
+    border-radius: 1.5rem;
+    padding: 2rem;
+  }
+
+  .checkoutConfirmation__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .checkoutConfirmation__body {
+    padding: 0 3rem;
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .checkoutConfirmation__img-box {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 3rem;
+  }
+  
+  .checkoutConfirmation__img {
+    width: 2.5rem;
+    height: 2.6rem;
+  }
+
+  .checkoutConfirmation a {
+    font-size: 1.5rem;
+    width: 20.8rem;
+    height: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cartConfirmation, .checkoutConfirmation {
+    width: 32.5rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
+  }
+
+  .checkoutConfirmation__title {
+    font-size: 1.6rem;
+  }
+
+  .checkoutConfirmation__body {
+    padding: 0 2rem;
+    font-size: 1.2rem;
+  }
+
+  .checkoutConfirmation__img-box {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 3rem;
+  }
+  
+  .checkoutConfirmation__img {
+    width: 2.2rem;
+    height: 2.3rem;
+  }
+
+  .checkoutConfirmation a {
+    font-size: 1.4rem;
+    width: 17.8rem;
+    height: 5.2rem;
   }
 }
 

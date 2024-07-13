@@ -1,10 +1,10 @@
 import { React } from "react";
-import Chairs from "./Chairs";
-import SectionNav from "./SectionNav"
+import Chairs from "../components/Chairs";
+import SectionNav from "../components/SectionNav"
 import { Route, Routes } from 'react-router-dom';
-import Bed from "./Bed"
+import Bed from "../components/Bed"
 
-const Main = () => {
+const HomePage = () => {
     return (
         <div>
             <h3 className="header__text">Welcome to our furniture collection, where style meets comfort and quality</h3>
@@ -26,4 +26,4 @@ const Main = () => {
     )
 }
 
-export default Main
+export default HomePage
