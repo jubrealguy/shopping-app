@@ -442,13 +442,21 @@ a {
   font-size: 2.4rem;
 }
 
+.section__pages li a {
+  text-decoration: none;
+  color: #000000;
+}
+
 .section__pages li:not(:last-child) {
   margin-right: 1.5rem;
 }
 
 .section__pages .section__pages-1 {
-  color: #ffffff;
   background: #024E82;
+}
+
+.section__pages .section__pages-1 a {
+  color: #ffffff;
 }
 
 .section__cart {
