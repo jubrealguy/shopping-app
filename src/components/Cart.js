@@ -82,9 +82,9 @@ const Cart = () => {
                         <table>
                         <tbody>
                             <tr>
-                            <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
-                            <td>{item.quantity}</td>
-                            <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
+                                <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
+                                <td>{item.quantity}</td>
+                                <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
                             </tr>
                         </tbody>
                         </table>

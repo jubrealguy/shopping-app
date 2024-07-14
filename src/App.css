@@ -1399,3 +1399,78 @@ a {
     justify-content: center;
   }
 }
+
+.product-box {
+  padding: 0 15rem;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.product_img-box {
+  flex: 0 0 45%;
+  text-align: center;
+  margin-right: 5rem;
+}
+
+.product_img {
+  width: 80%;
+}
+
+.product_title  {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.product_star {
+  width: 1.6rem;
+}
+
+.product_reviews {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.product_reviews span, .product_reviews div {
+  margin-right: 1rem;
+}
+
+.product_price {
+  font-weight: 500;
+  font-size: 4.8rem;
+  margin-bottom: 1rem;
+}
+
+.product_story {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.product_purchase {
+  display: flex;
+}
+
+.product_quantity {
+  border-collapse: collapse;
+  margin-right: 7rem;
+}
+
+.product_quantity td {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 4rem;
+  text-align: center;
+  padding: .1rem 0;
+  font-size: 1.6rem;
+}
+
+.product_quantity td:nth-child(2) {
+  background-color: rgba(128, 128, 128, 0.627);
+}
+
+.product_addcart {
+  width: 3.5rem;
+  cursor: pointer;
+}
