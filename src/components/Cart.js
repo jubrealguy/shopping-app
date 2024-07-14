@@ -35,6 +35,10 @@ const Cart = () => {
         setProceed(false)
     }
 
+    const calculateTotal = () => {
+        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    };
+
     const cartMobile = (
         <div className="cart__table-mobile">
             <ul className="cart__product">
@@ -110,7 +114,7 @@ const Cart = () => {
                     <div className="summary__table">
                         <div className="summary__table-top">
                             <span>Subtotal:</span>
-                            <span >$950</span>
+                            <span >${calculateTotal()}</span>
                         </div>
                         <div className="summary__table-middle">
                             <span>Shipping:</span>
@@ -118,7 +122,7 @@ const Cart = () => {
                         </div>
                         <div className="summary__table-bottom">
                             <span>Total:</span>
-                            <span>$950</span>
+                            <span>${calculateTotal()}</span>
                         </div>
                     </div>
                     <Link onClick={clickConfirm}>Proceed to checkout</Link>

@@ -34,6 +34,9 @@ const Chairs = () => {
     fetchData();
   }, []);
 
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <React.Fragment>
       <div className="section__chairs">
@@ -41,7 +44,10 @@ const Chairs = () => {
           const imageUrl = chair.photos && chair.photos.length > 0 ? `https://api.timbu.cloud/images/${chair.photos[0].url}` : null;
           return (
             <div key={chair.unique_id} className="card">
-              <Link to="/product" className="card-link">
+              <Link 
+                to="/product" 
+                state={{chair}}
+                className="card-link">
                 <img src={imageUrl} alt="" className="card-img" />
                 <p className="card-title">{chair.name}</p>
                 <div className="card-price">
