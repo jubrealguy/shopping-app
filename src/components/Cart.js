@@ -1,29 +1,31 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import chair3 from "../img/chair3.png";
-import chair8 from "../img/chair8.png";
 import cancel from "../img/cancel.png";
 import check_cancel from "../img/check_cancel.png";
 import check_confirm from "../img/check_confirm.png";
 import NumContext from './NumContext';
 
 const Cart = () => {
-    const { cartItems, setCartItems } = useContext(NumContext);
+    const { cartItems, setCartItems, setNum } = useContext(NumContext);
     const [proceed, setProceed] = useState(false);
-    const [digit3, setDigit3] = useState(1);
     let price;
 
     const handleRemoveItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-        console.log(cartItems);
+        const updatedItems = cartItems.filter(item => item.id !== id);
+        setCartItems(updatedItems);
+        const newTotalItems = updatedItems.reduce((total, item) => total + item.quantity, 0);
+        setNum(newTotalItems);
     };
 
     const handleQuantityChange = (id, change) => {
-        setCartItems((prevItems) => 
-            prevItems.map(item => 
+        setCartItems((prevItems) => {
+            const updatedItems = prevItems.map(item => 
                 item.id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
-            )
-        );
+            );
+            const newTotalItems = updatedItems.reduce((total, item) => total + item.quantity, 0);
+            setNum(newTotalItems);
+            return updatedItems;
+        });
     };
 
     const clickConfirm = (e) => {
@@ -40,36 +42,6 @@ const Cart = () => {
         return cartItems.reduce((total, item) => total + (item.current_price[0].USD[0] * item.quantity), 0);
     };
 
-    const cartMobile = (
-        <div className="cart__table-mobile">
-            <ul className="cart__product">
-                <li><h3>Product</h3></li>
-                <li className="cart__body-product"><img src={chair3} alt="" /><span>Red Chair</span></li>
-            </ul>
-            <ul className="cart__product">
-                <li><h3>Quantity</h3></li>
-                <li>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td onClick={() => setDigit3(digit3 - 1)}>-</td>
-                                <td>{digit3}</td>
-                                <td onClick={() => setDigit3(digit3 + 1)}>+</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </li>
-            </ul>
-            <ul className="cart__product">
-                <li><h3>Price</h3></li>
-                <li>{`$${price = 50}`}</li>
-            </ul>
-            <ul className="cart__product">
-                <li><h3>Subtotal</h3></li>
-                <li>${price * digit3}</li>
-            </ul>
-        </div>
-    )
 
     return (
         <div className="section__cart">
@@ -103,7 +75,7 @@ const Cart = () => {
                     </ul>
                 ))}
             </div>
-            {cartMobile}
+
             <div className="cart__link-mobile">
                 <Link to="/" href="##" className="cart__link">Return to store</Link>
             </div>
@@ -147,3 +119,36 @@ const Cart = () => {
 }
 
 export default Cart;
+
+
+
+// const cartMobile = (
+//     <div className="cart__table-mobile">
+//         <ul className="cart__product">
+//             <li><h3>Product</h3></li>
+//             <li className="cart__body-product"><img src={chair3} alt="" /><span>Red Chair</span></li>
+//         </ul>
+//         <ul className="cart__product">
+//             <li><h3>Quantity</h3></li>
+//             <li>
+//                 <table>
+//                     <tbody>
+//                         <tr>
+//                             <td onClick={() => setDigit3(digit3 - 1)}>-</td>
+//                             <td>{digit3}</td>
+//                             <td onClick={() => setDigit3(digit3 + 1)}>+</td>
+//                         </tr>
+//                     </tbody>
+//                 </table>
+//             </li>
+//         </ul>
+//         <ul className="cart__product">
+//             <li><h3>Price</h3></li>
+//             <li>{`$${price = 50}`}</li>
+//         </ul>
+//         <ul className="cart__product">
+//             <li><h3>Subtotal</h3></li>
+//             <li>${price * digit3}</li>
+//         </ul>
+//     </div>
+// )
