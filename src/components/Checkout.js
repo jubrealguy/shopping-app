@@ -1,16 +1,24 @@
-import chair3 from "../img/chair3.png"
-import chair8 from "../img/chair8.png"
 import check_confirm from "../img/check_confirm.png"
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Checkout = () => {
     const [congratmsg, setCongratmsg] = useState(false)
+    const location = useLocation();
+    const cartItems = location.state.cartItems;
 
     const clickConfirm =(e) => {
         e.preventDefault()
         setCongratmsg(true)
     }
+
+    const calculateTotal = () => {
+        return cartItems.reduce((total, item) => total + (item.current_price[0].USD[0] * item.quantity), 0);
+    };
+
+    const total = calculateTotal();
+
+
     return (
         <div className="checkout">
             <form className="checkout__form">
@@ -45,27 +53,22 @@ const Checkout = () => {
             <div className="checkout__summary">
                 <h2>Order Summary</h2>
                 <div className="summary__items">
-                    <ul className="summary__body">
-                        <li className="summary__body-product">
-                            <img src={chair3} alt="" />
-                            <p><span>Red Chair</span><span>Qty : 2</span></p>
-                        </li>
-                        <li>$50</li>
-                    </ul>
-                    <ul className="summary__body">
-                        <li className="summary__body-product">
-                            <img src={chair8} alt="" />
-                            <p><span>Kinsgold Chair</span><span>Qty : 2</span></p>
-                        </li>
-                        <li>$40</li>
-                    </ul>
+                    {cartItems.map(item => (
+                        <ul key={item.id} className="summary__body">
+                            <li className="summary__body-product">
+                                <img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} alt={item.name} />
+                                <p><span>{item.name}</span><span>Qty: {item.quantity}</span></p>
+                            </li>
+                            <li>${item.current_price[0].USD[0] * item.quantity}</li>
+                        </ul>
+                    ))}
                 </div>
                 <div className="summary__details">
                     <h2>Cart Total</h2>
                     <div className="summary__table">
                         <div className="summary__table-top">
                             <span>Subtotal:</span>
-                            <span >$80</span>
+                            <span>${total}</span>
                         </div>
                         <div className="summary__table-middle">
                             <span>Shipping:</span>
@@ -73,7 +76,7 @@ const Checkout = () => {
                         </div>
                         <div className="summary__table-bottom">
                             <span>Total:</span>
-                            <span>$80</span>
+                            <span>${total}</span>
                         </div>
                     </div>
                 </div>

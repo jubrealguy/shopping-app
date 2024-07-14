@@ -109,7 +109,7 @@ const Cart = () => {
                 <div className="cartConfirmation">
                     <p>Are you sure you want to complete the order</p>
                     <div className="link-div">
-                        <Link to="/cart/checkout"><img src={check_confirm} alt="" /></Link>
+                        <Link to="/cart/checkout" state={{cartItems: cartItems}}><img src={check_confirm} alt="" /></Link>
                         <Link onClick={clickCancel}><img src={check_cancel} alt="" /></Link>
                     </div>
                 </div>
