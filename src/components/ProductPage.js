@@ -1,6 +1,6 @@
 const Product = () => {
     return (
-        <div>
+        <div className="home">
             <h2>Product Page</h2>
             <p>Product component under construction..........</p>
         </div>

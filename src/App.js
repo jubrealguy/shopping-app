@@ -13,12 +13,14 @@ function App() {
     <div className="App">
       <NumProvider>
         <Header />
-          <Routes>
+        <div className='home'>
+        <Routes>
             <Route path='/*' element={<HomePage />}></Route>
             <Route path='/cart' element={<Cart />}></Route>
             <Route path='/cart/checkout' element={<Checkout />}></Route>
             <Route path='/product' element={<Product />}></Route>
           </Routes>
+        </div>
         <Footer />
       </NumProvider>
     </div>

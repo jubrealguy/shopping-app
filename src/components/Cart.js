@@ -68,34 +68,34 @@ const Cart = () => {
         <div className="section__cart">
             <h3 className="cart__heading"><span className="cart__heading-span">Home / </span>Cart</h3>
             <div className="cart__table">
-        <ul className="cart__head">
-            <li>Product</li>
-            <li>Price</li>
-            <li>Quantity</li>
-            <li>Subtotal</li>
-        </ul>
-        {cartItems.map(item => (
-            <ul key={item.id} className="cart__body">
-            <li className="cart__body-product"><img src={item.image} alt="" /><span>{item.name}</span></li>
-            <li>{`$${item.price}`}</li>
-            <li>
-                <table>
-                <tbody>
-                    <tr>
-                    <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
-                    <td>{item.quantity}</td>
-                    <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
-                    </tr>
-                </tbody>
-                </table>
-            </li>
-            <li>
-                <span>${item.price * item.quantity}</span>
-                <img src={cancel} alt="" onClick={() => handleRemoveItem(item.id)} />
-            </li>
-            </ul>
-        ))}
-        </div>
+                <ul className="cart__head">
+                    <li>Product</li>
+                    <li>Price</li>
+                    <li>Quantity</li>
+                    <li>Subtotal</li>
+                </ul>
+                {cartItems.map(item => (
+                    <ul key={item.id} className="cart__body">
+                    <li className="cart__body-product"><img src={item.image} alt="" /><span>{item.name}</span></li>
+                    <li>{`$${item.price}`}</li>
+                    <li>
+                        <table>
+                        <tbody>
+                            <tr>
+                            <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
+                            <td>{item.quantity}</td>
+                            <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </li>
+                    <li>
+                        <span>${item.price * item.quantity}</span>
+                        <img src={cancel} alt="" onClick={() => handleRemoveItem(item.id)} />
+                    </li>
+                    </ul>
+                ))}
+            </div>
             {cartMobile}
             <div className="cart__link-mobile">
                 <Link to="/" href="##" className="cart__link">Return to store</Link>

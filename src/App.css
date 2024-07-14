@@ -31,6 +31,14 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 3rem 7.5rem;
+  position: fixed;
+  background: #ffffff;
+  width: 100%;
+  z-index: 1000;
+}
+
+.home {
+  padding-top: 12rem;
 }
 
 .header__primary {
@@ -85,6 +93,8 @@ a {
 .header__icons--cart {
   position: relative;
   text-decoration: none;
+  margin-bottom: 2rem;
+  margin-left: -2rem;
 }
 
 .header__icons--cart img {
@@ -323,6 +333,10 @@ a {
 }
 
 .card {
+  position: relative;
+}
+
+.card-link {
   text-decoration: none;
   color: inherit;
 }
@@ -400,6 +414,10 @@ a {
 .card-carting {
   margin-left: auto;
   width: 2.4rem;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -3rem;
 }
 
 @media screen and (max-width: 768px) {
