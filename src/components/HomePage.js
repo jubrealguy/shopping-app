@@ -6,10 +6,8 @@ import Bed from "./Bed";
 import { Link } from "react-router-dom";
 
 const HomePage = () => {
-    // Assuming 30 products and 10 products per page
-    const totalPages = Math.ceil(30 / 10); // Calculate total pages
+    const totalPages = Math.ceil(30 / 10);
 
-    // Generate pagination items
     const paginationItems = [];
     for (let i = 1; i <= totalPages; i++) {
         paginationItems.push(<li key={i} className={`section__pages-${i}`}><Link to={`/?page=${i}`}>{i}</Link></li>);
@@ -24,7 +22,7 @@ const HomePage = () => {
                     <Route path="/" element={<Chairs page={1} />} />
                     <Route path="/bed" element={<Bed />} />
                 </Routes>
-                {/* Pagination */}
+    
                 <ul className="section__pages">
                     {paginationItems}
                 </ul>
