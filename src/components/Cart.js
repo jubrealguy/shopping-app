@@ -15,6 +15,7 @@ const Cart = () => {
 
     const handleRemoveItem = (id) => {
         setCartItems(cartItems.filter(item => item.id !== id));
+        console.log(cartItems);
     };
 
     const handleQuantityChange = (id, change) => {
@@ -23,7 +24,6 @@ const Cart = () => {
                 item.id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
             )
         );
-        console.log(cartItems);
     };
 
     const clickConfirm = (e) => {
@@ -83,7 +83,7 @@ const Cart = () => {
                 </ul>
                 {cartItems.map(item => (
                     <ul key={item.id} className="cart__body">
-                        <li className="cart__body-product"><img src={item.image} alt="" /><span>{item.name}</span></li>
+                        <li className="cart__body-product"><img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} alt="" /><span>{item.name}</span></li>
                         <li>{`$${price = item.current_price[0].USD[0]}`}</li>
                         <li>
                             <table>
