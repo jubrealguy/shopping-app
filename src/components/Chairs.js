@@ -4,14 +4,15 @@ import add_cart from "../img/add_cart.png";
 import NumContext from './NumContext';
 
 const Chairs = () => {
-  const { num, setNum } = useContext(NumContext);
+  const { num, setNum, addItemToCart } = useContext(NumContext);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const addCart = (e) => {
+  const addCart = (e, chair) => {
     e.stopPropagation();
     setNum(num + 1);
+    addItemToCart(chair);
   };
 
   useEffect(() => {
@@ -61,7 +62,7 @@ const Chairs = () => {
                 src={add_cart} 
                 alt="" 
                 className="card-carting" 
-                onClick={addCart} 
+                onClick={(e) => addCart(e, chair)} 
               />
             </div>
           )

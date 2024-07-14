@@ -14,7 +14,7 @@ function App() {
       <NumProvider>
         <Header />
         <div className='home'>
-        <Routes>
+          <Routes>
             <Route path='/*' element={<HomePage />}></Route>
             <Route path='/cart' element={<Cart />}></Route>
             <Route path='/cart/checkout' element={<Checkout />}></Route>

@@ -1,42 +1,43 @@
-import chair3 from "../img/chair3.png"
-import chair8 from "../img/chair8.png"
-import cancel from "../img/cancel.png"
-import check_cancel from "../img/check_cancel.png"
-import check_confirm from "../img/check_confirm.png"
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react"
+import chair3 from "../img/chair3.png";
+import chair8 from "../img/chair8.png";
+import cancel from "../img/cancel.png";
+import check_cancel from "../img/check_cancel.png";
+import check_confirm from "../img/check_confirm.png";
+import NumContext from './NumContext';
 
 const Cart = () => {
-    const [proceed, setProceed] = useState(false)
-    const [digit3, setDigit3] = useState(1)
+    const { cartItems, setCartItems } = useContext(NumContext);
+    const [proceed, setProceed] = useState(false);
+    const [digit3, setDigit3] = useState(1);
     let price;
-    const initialCartItems = [
-        { id: 1, name: 'Red Chair', price: 50, quantity: 1, image: chair3 },
-        { id: 2, name: 'Kinsgold Chair', price: 40, quantity: 1, image: chair8 },
-      ];
-    
-      const [cartItems, setCartItems] = useState(initialCartItems);
-    
-      const handleRemoveItem = (id) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
-      };
-    
-      const handleQuantityChange = (id, change) => {
-        setCartItems(cartItems.map(item => item.id === id ? { ...item, quantity: item.quantity + change } : item));
-      };
 
-    const clickConfirm =(e) => {
-        e.preventDefault()
-        setProceed(true)
+    const handleRemoveItem = (id) => {
+        setCartItems(cartItems.filter(item => item.id !== id));
+    };
+
+    const handleQuantityChange = (id, change) => {
+        setCartItems((prevItems) => 
+            prevItems.map(item => 
+                item.id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
+            )
+        );
+        console.log(cartItems);
+    };
+
+    const clickConfirm = (e) => {
+        e.preventDefault();
+        setProceed(true);
     }
 
-    const clickcancel =(e) => {
-        e.preventDefault()
-        setProceed(false)
+    const clickCancel = (e) => {
+        e.preventDefault();
+        setProceed(false);
     }
 
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+        return cartItems.reduce((total, item) => total + (item.current_price[0].USD[0] * item.quantity), 0);
     };
 
     const cartMobile = (
@@ -49,11 +50,13 @@ const Cart = () => {
                 <li><h3>Quantity</h3></li>
                 <li>
                     <table>
-                        <tr>
-                            <td onClick={() => setDigit3(digit3-1)}>-</td>
-                            <td>{digit3}</td>
-                            <td onClick={() => setDigit3(digit3+1)}>+</td>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <td onClick={() => setDigit3(digit3 - 1)}>-</td>
+                                <td>{digit3}</td>
+                                <td onClick={() => setDigit3(digit3 + 1)}>+</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </li>
             </ul>
@@ -80,23 +83,23 @@ const Cart = () => {
                 </ul>
                 {cartItems.map(item => (
                     <ul key={item.id} className="cart__body">
-                    <li className="cart__body-product"><img src={item.image} alt="" /><span>{item.name}</span></li>
-                    <li>{`$${item.price}`}</li>
-                    <li>
-                        <table>
-                        <tbody>
-                            <tr>
-                                <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
-                                <td>{item.quantity}</td>
-                                <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </li>
-                    <li>
-                        <span>${item.price * item.quantity}</span>
-                        <img src={cancel} alt="" onClick={() => handleRemoveItem(item.id)} />
-                    </li>
+                        <li className="cart__body-product"><img src={item.image} alt="" /><span>{item.name}</span></li>
+                        <li>{`$${price = item.current_price[0].USD[0]}`}</li>
+                        <li>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
+                                        <td>{item.quantity}</td>
+                                        <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <span>${price * item.quantity}</span>
+                            <img src={cancel} alt="" onClick={() => handleRemoveItem(item.id)} />
+                        </li>
                     </ul>
                 ))}
             </div>
@@ -114,7 +117,7 @@ const Cart = () => {
                     <div className="summary__table">
                         <div className="summary__table-top">
                             <span>Subtotal:</span>
-                            <span >${calculateTotal()}</span>
+                            <span>${calculateTotal()}</span>
                         </div>
                         <div className="summary__table-middle">
                             <span>Shipping:</span>
@@ -129,13 +132,13 @@ const Cart = () => {
                 </div>
             </div>
 
-            { proceed && 
+            {proceed && 
             <div className="cartConfirmation-box">
                 <div className="cartConfirmation">
                     <p>Are you sure you want to complete the order</p>
                     <div className="link-div">
                         <Link to="/cart/checkout"><img src={check_confirm} alt="" /></Link>
-                        <Link onClick={clickcancel}><img src={check_cancel} alt="" /></Link>
+                        <Link onClick={clickCancel}><img src={check_cancel} alt="" /></Link>
                     </div>
                 </div>
             </div>}
@@ -143,4 +146,4 @@ const Cart = () => {
     )
 }
 
-export default Cart
+export default Cart;

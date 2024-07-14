@@ -9,11 +9,12 @@ const Product = () => {
     const { state } = location;
     const chair = state?.chair;
     const [digit, setDigit] = useState(1);
-    const { num, setNum } = useContext(NumContext);
+    const { num, setNum, addItemToCart } = useContext(NumContext);
 
     const addCart = (e) => {
         e.stopPropagation();
         setNum(num + 1);
+        addItemToCart(chair);
         console.log(chair)
     };
 
