@@ -619,10 +619,6 @@ a {
     font-size: 1.6rem;
     padding: .6rem 1.2rem;
   }
-
-  .section__pages li:last-child {
-    display: none;
-  }
 }
 
 .cart__link {
