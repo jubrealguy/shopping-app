@@ -2,7 +2,7 @@ import { useState, React } from "react";
 import down from "../img/chevron-down.png"
 import { Link } from "react-router-dom";
 
-const SectionNav = () => {
+const SubNavigation = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [activeItem, setActiveItem] = useState('Chairs');
@@ -25,7 +25,7 @@ const SectionNav = () => {
     return (
         <div className="section__nav">
             <ul className="section__nav--list">
-                <li className={activeIndex === 0 ? 'section__nav--list-first active' : 'section__nav--list-first'} onClick={() => handleIndexClick(0)} >
+                <li className={activeIndex === 0 ? 'active' : ''} onClick={() => handleIndexClick(0)} >
                     <Link to="">Chairs</Link>
                 </li>
                 <li className={activeIndex === 1 ? 'active' : ''} onClick={() => handleIndexClick(1)} >
@@ -59,4 +59,4 @@ const SectionNav = () => {
     )
 }
 
-export default SectionNav
+export default SubNavigation

@@ -23,6 +23,7 @@ const Chairs = () => {
                 const result = await response.json();
                 setData(result.items);
                 setLoading(false);
+                console.log(result.items)
             } catch (error) {
                 setError(error);
                 setLoading(false);
