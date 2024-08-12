@@ -8,10 +8,10 @@ export const NumProvider = ({ children }) => {
 
   const addItemToCart = (item) => {
     setCartItems((prevItems) => {
-      const itemExists = prevItems.find((cartItem) => cartItem.id === item.id);
+      const itemExists = prevItems.find((cartItem) => cartItem._id === item._id);
       if (itemExists) {
         return prevItems.map((cartItem) =>
-          cartItem.id === item.id
+          cartItem._id === item._id
             ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );

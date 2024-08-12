@@ -22,7 +22,7 @@ const Product = () => {
         return <p>No product data available</p>;
     }
 
-    const imageUrl = chair.photos && chair.photos.length > 0 ? `https://api.timbu.cloud/images/${chair.photos[0].url}` : "";
+    const imageUrl = chair.photo && chair.photo.length > 0 ? chair.photo : "https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/darcy/sofa_WLCHRDRCFVBL/sofa_WLCHRDRCFVBL_1.jpg";
 
     return (
         <div className="product-box">
@@ -34,18 +34,14 @@ const Product = () => {
                     <h2 className="product_title">{chair.name}</h2>
                     <div className="product_reviews">
                         <div>
-                            <img src={star} alt="" className="product_star" />
-                            <img src={star} alt="" className="product_star" />
-                            <img src={star} alt="" className="product_star" />
-                            <img src={star} alt="" className="product_star" />
-                            <img src={star} alt="" className="product_star" />
+                        {Array(5).fill().map((_, index) => ( <img key={index} src={star} alt="" className="product_star" />))}
                         </div>
                         <span>(25 reviews)</span>
                         <span>|</span>
                         <span>In stock</span>
                     </div>
-                    <p className="product_price">${chair.current_price[0].USD[0]}</p>
-                    <p className="product_story">Your new favorite piece to curl up with a book or watch a TV, perfect for reading, napping or simply lounging around</p>
+                    <p className="product_price">${chair.price}</p>
+                    <p className="product_story">{chair.description}</p>
                     <span></span>
                     <div className="product_purchase">
                         <table className="product_quantity">

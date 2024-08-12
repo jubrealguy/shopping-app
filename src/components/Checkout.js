@@ -13,7 +13,7 @@ const Checkout = () => {
     }
 
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + (item.current_price[0].USD[0] * item.quantity), 0);
+        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     };
 
     const total = calculateTotal();
@@ -56,10 +56,10 @@ const Checkout = () => {
                     {cartItems.map(item => (
                         <ul key={item.id} className="summary__body">
                             <li className="summary__body-product">
-                                <img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} alt={item.name} />
+                                <img src={item.photo} alt={item.name} />
                                 <p><span>{item.name}</span><span>Qty: {item.quantity}</span></p>
                             </li>
-                            <li>${item.current_price[0].USD[0] * item.quantity}</li>
+                            <li>${item.price * item.quantity}</li>
                         </ul>
                     ))}
                 </div>

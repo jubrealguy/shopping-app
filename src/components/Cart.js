@@ -20,7 +20,7 @@ const Cart = () => {
     const handleQuantityChange = (id, change) => {
         setCartItems((prevItems) => {
             const updatedItems = prevItems.map(item => 
-                item.id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
+                item._id === id ? { ...item, quantity: Math.max(1, item.quantity + change) } : item
             );
             const newTotalItems = updatedItems.reduce((total, item) => total + item.quantity, 0);
             setNum(newTotalItems);
@@ -39,9 +39,8 @@ const Cart = () => {
     }
 
     const calculateTotal = () => {
-        return cartItems.reduce((total, item) => total + (item.current_price[0].USD[0] * item.quantity), 0);
+        return cartItems.reduce((total, item) => total + (parseInt(item.price) * item.quantity), 0);
     };
-
 
     return (
         <div className="section__cart">
@@ -54,16 +53,19 @@ const Cart = () => {
                     <li>Subtotal</li>
                 </ul>
                 {cartItems.map(item => (
-                    <ul key={item.id} className="cart__body">
-                        <li className="cart__body-product"><img src={`https://api.timbu.cloud/images/${item.photos[0].url}`} alt="" /><span>{item.name}</span></li>
-                        <li>{`$${price = item.current_price[0].USD[0]}`}</li>
+                    <ul key={item._id} className="cart__body">
+                        <li className="cart__body-product">
+                            <img src={ item.photo ? item.photo : `https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/darcy/sofa_WLCHRDRCFVBL/sofa_WLCHRDRCFVBL_1.jpg`} alt="" />
+                            <span>{item.name}</span>
+                        </li>
+                        <li>{`$${price = item.price}`}</li>
                         <li>
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td className="table-data" onClick={() => handleQuantityChange(item.id, -1)}>-</td>
+                                        <td className="table-data" onClick={() => handleQuantityChange(item._id, -1)}>-</td>
                                         <td>{item.quantity}</td>
-                                        <td className="table-data" onClick={() => handleQuantityChange(item.id, 1)}>+</td>
+                                        <td className="table-data" onClick={() => handleQuantityChange(item._id, 1)}>+</td>
                                     </tr>
                                 </tbody>
                             </table>

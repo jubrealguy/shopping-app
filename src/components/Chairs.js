@@ -1,5 +1,8 @@
+// https://e-furniture-7e2p.onrender.com
+// https://e-furniture-7e2p.onrender.com/api/beds
+
 import React, { useContext, useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import add_cart from "../img/add_cart.png";
 import NumContext from './NumContext';
 
@@ -8,30 +11,30 @@ const Chairs = () => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const location = useLocation();
-    const searchParams = new URLSearchParams(location.search);
-    const page = parseInt(searchParams.get('page')) || 1;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const url = `https://timbu-get-all-products.reavdev.workers.dev/?organization_id=9dc83d54958d4e28a313c2bd154b1379&reverse_sort=false&page=${page}&size=10&Appid=UBB2UMUP2FSHXH1&Apikey=0a067da6325d42b996d4c5be95eb034a20240713164907481886`;
+                const url = `https://e-furniture-7e2p.onrender.com/api/beds`;
                 const response = await fetch(url);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 const result = await response.json();
-                setData(result.items);
+                console.log(result.posts)
+                setData(result.posts);
                 setLoading(false);
                 console.log(result.items)
-            } catch (error) {
+            } 
+            
+            catch (error) {
                 setError(error);
                 setLoading(false);
             }
         };
 
         fetchData();
-    }, [page]);
+    }, []);
 
     const addCart = (e, chair) => {
         e.stopPropagation();
@@ -46,20 +49,24 @@ const Chairs = () => {
         <React.Fragment>
             <div className="section__chairs">
                 {data.map((chair) => {
-                    const imageUrl = chair.photos && chair.photos.length > 0 ? `https://api.timbu.cloud/images/${chair.photos[0].url}` : null;
                     return (
-                        <div key={chair.unique_id} className="card">
+                        <div key={chair._id} className="card">
                             <Link 
-                                to="/product" 
-                                state={{ chair }}
+                                to="/product"
+                                state={{ chair }} 
                                 className="card-link"
                             >
-                                <img src={imageUrl} alt="" className="card-img" />
+                                {chair && chair.photo ? (
+                                    <img src={chair.photo} alt="" className="card-img" />
+                                ) : (
+                                    <img src="https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/darcy/sofa_WLCHRDRCFVBL/sofa_WLCHRDRCFVBL_1.jpg" alt="Default" className="card-img" />
+                                )}
                                 <p className="card-title">{chair.name}</p>
+                                <p>{chair.description}</p>
                                 <div className="card-price">
                                     <p>
-                                        <span className="card-price-1">${chair.current_price[0].USD[1]}</span>
-                                        <span className="card-price-2">${chair.current_price[0].USD[0]}</span>
+                                        <span className="card-price-1">${chair.price}</span>
+                                        <span className="card-price-2">${100}</span>
                                     </p>
                                 </div>
                             </Link>
