@@ -24,7 +24,6 @@ const Chairs = () => {
                 console.log(result.posts)
                 setData(result.posts);
                 setLoading(false);
-                console.log(result.items)
             } 
             
             catch (error) {

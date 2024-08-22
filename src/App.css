@@ -625,15 +625,31 @@ a {
   }
 }
 
-.cart__link {
-  display: inline-block;
+.cart__link-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 3.5rem 0;
+}
+
+.cart__link-mobile a {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 2.6rem;
+}
+
+.cart__link {
   font-size: 1.6rem;
   padding: 1rem 3rem;
   color: inherit;
-  text-decoration: none;
   border: 1px solid #024E82;
-  border-radius: 2.6rem;
+}
+
+.cart__clear {
+  font-size: 1.4rem;
+  padding: .75rem 2.5rem;
+  background: red;
+  color: #ffffff;
 }
 
 .cart__checkout {

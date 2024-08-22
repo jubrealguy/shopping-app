@@ -11,7 +11,7 @@ const Cart = () => {
     let price;
 
     const handleRemoveItem = (id) => {
-        const updatedItems = cartItems.filter(item => item.id !== id);
+        const updatedItems = cartItems.filter(item => item._id !== id);
         setCartItems(updatedItems);
         const newTotalItems = updatedItems.reduce((total, item) => total + item.quantity, 0);
         setNum(newTotalItems);
@@ -27,6 +27,11 @@ const Cart = () => {
             return updatedItems;
         });
     };
+
+    const clearCart = (e) => {
+        e.preventDefault()
+        setCartItems([])
+    }
 
     const clickConfirm = (e) => {
         e.preventDefault();
@@ -72,7 +77,7 @@ const Cart = () => {
                         </li>
                         <li>
                             <span>${price * item.quantity}</span>
-                            <img src={cancel} alt="" onClick={() => handleRemoveItem(item.id)} />
+                            <img src={cancel} alt="" onClick={() => handleRemoveItem(item._id)} />
                         </li>
                     </ul>
                 ))}
@@ -80,6 +85,7 @@ const Cart = () => {
 
             <div className="cart__link-mobile">
                 <Link to="/" href="##" className="cart__link">Return to store</Link>
+                <Link className="cart__clear" onClick={clearCart}>clear cart</Link>
             </div>
             <div className="cart__checkout">
                 <form className="cart__form">
